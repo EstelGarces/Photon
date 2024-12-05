@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: {fileID: 96547680}
+  buttonText: {fileID: 1622304753}
 --- !u!4 &171886410
 Transform:
   m_ObjectHideFlags: 0

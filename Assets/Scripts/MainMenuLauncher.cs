@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuLauncher : MonoBehaviourPunCallbacks
 {
     public TMP_InputField name;
+    public TMP_Text buttonText;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,16 +25,14 @@ public class MainMenuLauncher : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.NickName = name.text;
             PlayerPrefs.SetString("playerName", name.text);
+            buttonText.text = "Conectando...";
             PhotonNetwork.ConnectUsingSettings();
 
         }
-
     }
+
     public override void OnConnectedToMaster()
     {
-        PhotonNetwork.JoinRandomOrCreateRoom();
         SceneManager.LoadScene("SampleScene");
-
     }
-
 }
